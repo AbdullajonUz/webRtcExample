@@ -84,7 +84,7 @@ class SignalingClient(
                                 listener.onOfferReceived(SessionDescription(
                                     SessionDescription.Type.OFFER,data["sdp"].toString()))
                             SDPtype = "Offer"
-                        } else if (data?.containsKey("type") &&
+                        } else if (data?.containsKey("type") == true &&
                             data.getValue("type").toString() == "ANSWER") {
                                 listener.onAnswerReceived(SessionDescription(
                                     SessionDescription.Type.ANSWER,data["sdp"].toString()))
